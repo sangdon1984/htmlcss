@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js 05</title>
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/popper.js"></script>
+    <script src="./js/bootstrap.js"></script>
+
+    <script>
+        // 지역변수, 전역변수
+        // 지역변수 : 특정 코드블럭내에서 선언되어 사용되는 변수
+        // 함수 내의 지역변수, 반복문/제어문(if문/for문) 내의 변수
+        
+        // 전역변수 : 현재 웹 페이지 내에서 선언되어 사용되는 변수
+        // 특정 함수나 제어문, 반복문과 같은 코드 블럭 외부에 선언된 변수
+
+        // 함수의 지역변수
+        function myFunc01(){
+            var a = 10; //함수의 지역변수
+            var b = 20; //함수의 지역변수
+            
+            console.log(a + b);
+        }
+        
+        // 전역변수를 다른 코드 블럭에서 불러와서 사용할 수 있음
+        // 전역 변수는 선언시 여러 코드 블럭에서 해당 변수를 공유하고 있기 때문에 사용 시점에 따라서 전역 변수의 값이 변경될 가능성이 있음
+        // 전역변수는 프로그램이 종료되기 전까지 늘 메모리에 등록되어 있으므로 메모리를 많이 사용함
+        var value = 100; // 전역변수 선언
+        
+        function myFunc02() {
+            // var value = 200; //지역변수
+            var result = 300; //지역변수
+
+            console.log(value + result);
+        }
+    </script>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- col뒤에 숫자 안적으면 알아서 골고루 분배 -->
+            <div class="col-sm"></div>
+            <div class="col-sm">
+                <button id="btn01" class="btn btn-primary" onclick="myFunc01();">버튼 01</button>
+            </div>
+            <div class="col-sm">
+                <button id="btn02" class="btn btn-info" onclick="myFunc02();">버튼 02</button>
+            </div>
+            <div class="col-sm"></div>
+            <div class="col-sm"></div>
+        </div>
+    </div>
+</body>
+</html>
