@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bootstrap 테마색상 사용</title>
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/popper.js"></script>
+    <script src="./js/bootstrap.js"></script>
+
+    <style>
+        .text-black-25 {
+        color: rgba(0, 0, 0, 0.25) !important;
+        }
+
+        #div01 > div {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 부트스트랩은 기본적인 테마 색상을 가지고 있음 -->
+    <!-- 기본색상 primary, secondary, success, info, warning, danger, light, dark -->
+    <!-- 추가로 muted, body, white -->
+
+    <!-- 글자 색상 사용하기 -->
+    <h3 class="text-primary">text primary</h3>
+    <h3 class="text-secondary">text secondary</h3>
+    <h3 class="text-success">text success</h3>
+    <h3 class="text-info">text info</h3>
+    <h3 class="text-warning">text warning</h3>
+    <h3 class="text-danger">text danger</h3>
+    <h3 class="text-light bg-dark">text light</h3>
+    <h3 class="text-dark">text dark</h3>
+    <br>
+    <h3 class="text-muted">text muted</h3>
+    <h3 class="text-body">text body</h3>
+    <h3 class="text-white bg-dark">text white</h3>
+
+    <br><hr><br>
+    <!-- 글자 색상에 투명도 넣기 -->
+    <!-- 검정색, 흰색만 사용 가능함 -->
+    <h3 class="text-body">검정색 글자의 투명도 없음</h3>
+    <h3 class="text-black-50">검정색 글자의 투명도 50%</h3>
+    <h3 class="text-white bg-dark">흰색 글자의 투명도 없음</h3>
+    <h3 class="text-white-50 bg-dark">흰색 글자의 투명도 50%</h3>
+    <h3 class="text-black-25">검정색 글자의 투명도 25%</h3>
+
+    <br><hr><br>
+
+    <!-- a 태그에 글자 색상 사용 -->
+    <!-- 일반 글자 태그에 색상 사용하는 방법과 동일 -->
+    <a href="#" class="text-primary">link primary</a><br>
+    <a href="#" class="text-secondary">link secondary</a><br>
+    <a href="#" class="text-success">link success</a><br>
+    <a href="#" class="text-info">link info</a><br>
+    <a href="#" class="text-warning">link warning</a><br>
+    <a href="#" class="text-danger">link danger</a><br>
+    <a href="#" class="text-light bg-dark">link light</a><br>
+    <a href="#" class="text-dark">link dark</a><br>
+
+    <br><hr><br>
+
+    <!-- 배경 테마색상 사용하기 -->
+    <!-- 기본 테마 색상을 사용하며, bg-테마색상으로 표현함 -->
+    <!-- primary, secondary, success, info, warning, danger, lignt, dark -->
+    <h3 class="bg-primary text-white">background primary</h3>
+    <h3 class="bg-secondary text-white">background secondary</h3>
+    <h3 class="bg-success text-white">background success</h3>
+    <h3 class="bg-info text-white">background info</h3>
+    <h3 class="bg-warning text-white">background warning</h3>
+    <h3 class="bg-danger text-white">background danger</h3>
+    <h3 class="bg-dark text-white">background dark</h3>
+    <h3 class="bg-light">background light</h3>
+
+    <br><hr><br>
+
+    <!-- border 테마 색상= -->
+    <!-- border 색상 사용시 클래스명에 border을 입력하고 옵션으로 border-테마색상을 추가함 -->
+    <!-- primary, secondary, success, info, warning, danger, lignt, dark, white -->
+    <div id="div01">
+        <div class="border border-primary"></div>
+        <div class="border border-secondary"></div>
+        <div class="border border-success"></div>
+        <div class="border border-info"></div>
+        <div class="border border-warning"></div>
+        <div class="border border-danger"></div>
+        <div class="border border-light"></div>
+        <div class="border border-dark"></div>
+        <div class="border border-white"></div>
+    </div>
+
+    <br><hr><br>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

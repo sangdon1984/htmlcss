@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>부트스트랩 테이블 사용하기</title>
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/popper.js"></script>
+    <script src="./js/bootstrap.js"></script>
+
+    <style>
+        .text-black-25 {
+        color: rgba(0, 0, 0, 0.25) !important;
+        }
+
+        #div01 > div {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 부트스트랩의 미리 디자인된 테이블 사용하기 -->
+    <!-- html의 table 태그에 클래스명으로 table라고 입력하면 미리 디자인됨 형태의 테이블을 사용할 수 있음 -->
+     
+    <!-- 부트스트랩의 테이블을 사용하려면 thead, tbody, tfoot을 사용해야 함 -->
+
+    <!-- 옵션을 추가 입력하면 테이블의 모양과 기능이 추가 됨 -->
+    <!-- table-striped : 홀수줄과 짝수줄의 색상을 다르게 하여 테이블의 내용을 쉽게 구분할 수 있게 함 -->
+    <!-- table-hover : 마우스가 올라간 테이블 라인의 색상을 변경시켜 쉽게 구분할 수 있게 함 -->
+    <!-- table-bordered : 테이블의 세로 줄을 추가하여 모든 칸에 세로줄을 표시함 -->
+    <!-- table-bordeless : 테이블의 가로, 세로 줄을 모두 삭제한 형태의 테이블을 표시함 -->
+    <!-- table-dark : 테이블의 색상 테마를 검정색으로 변경함 -->
+    <!-- 테이블 테마 색상 -->
+    <!-- 테이블의 전체 테마 색상은 기본형과 dark 2가지만 지원 -->
+    <!-- 테이블의 각 라인/칸은 따로 색상 지정이 가능함(tr/td) -->
+    <!-- table-테마색상 / 기본테마색상 8가지 사용가능 -->
+    <!-- 추가 색상 : active, default -->
+    
+    <!-- 테이블 헤드 색상 변경(dark, light) -->
+    <!-- 테이블 헤드(thead) 만 따로 테이블의 전체 테마와 상관 없이 색상변경이 가능함 -->
+    <!-- thead-dark, thead-light 로 사용 -->
+    <!-- 클래스명 입력 부분은 thead에 입력 -->
+
+    <!-- 테이블 크기 설정 -->
+    <!-- 기본 테이블 크기와 작은 테이블 크기로 설정 가능 -->
+    <!-- table-sm을 옵션으로 추가함 -->
+
+    <div class="container">
+        <table class="table mt-3 table-striped table-hover table-bordeless table-sm">
+            <thead class="thead-dark">
+                <tr>
+                    <th>순번</th>
+                    <th>이름</th>
+                    <th>직업</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-primary">
+                    <td>primary</td>
+                    <td>원빈</td>
+                    <td>영화배우</td>
+                </tr>
+                <tr class="table-secondary">
+                    <td>secondary</td>
+                    <td>아이유</td>
+                    <td>가수</td>
+                </tr>
+                <tr class="table-success">
+                    <td>success</td>
+                    <td>백종원</td>
+                    <td>컨설턴트</td>
+                </tr>
+                <tr class="table-info">
+                    <td>info</td>
+                    <td>화사</td>
+                    <td>가수</td>
+                </tr>
+                <tr class="table-warning">
+                    <td>warning</td>
+                    <td>김윤지(NS윤지)</td>
+                    <td>배우</td>
+                </tr>
+                <tr class="table-danger">
+                    <td>danger</td>
+                    <td>리사</td>
+                    <td>가수</td>
+                </tr>
+                <tr class="table-dark text-dark">
+                    <td>dark</td>
+                    <td>한가인</td>
+                    <td>배우</td>
+                </tr>
+                <tr class="table-light">
+                    <td>light</td>
+                    <td>비</td>
+                    <td>가수</td>
+                </tr>
+                <tr class="table-active">
+                    <td>active</td>
+                    <td>김종국</td>
+                    <td>방송인</td>
+                </tr>
+                <tr class="table-default">
+                    <td>default</td>
+                    <td>강동원</td>
+                    <td class="table-active">배우</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br><hr><br>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

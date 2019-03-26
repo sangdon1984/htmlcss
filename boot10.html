@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>부트10 네브바, 네비게이션바</title>
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/popper.js"></script>
+    <script src="./js/bootstrap.js"></script>
+</head>
+<body>
+    <!-- 네비게이션 메뉴 -->
+    <!-- ul을 이용하여 네비게이션 메뉴를 구현함 -->
+    <!-- ul의 class에 nav를 추가하고 자식태그인 li의 class에 nav-item을 추가하는 방식으로 사용함 -->
+    <!-- li의 자식 태그로 a 링크를 사용하고, class에 nav-link를 사용해서 네비게이션 메뉴를 완성함 -->
+    <!-- ul태그는 기본적으로 block 타입이지만 nav를 사용하면 inline 타입으로 변경됨 -->
+    <div class="container">
+
+        <ul class="nav">
+            <li class="nav-item">
+                <a href="#" class="nav-link">링크1</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">링크2</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">링크3</a>
+            </li>
+        </ul>
+
+        <!-- 네비게이션 메뉴 정렬 -->
+        <!-- ul의 class에 justify-content-center(가운데 정렬), end(오른쪽 정렬) 를 추가함 -->
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a href="#" class="nav-link">링크1</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">링크2</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">링크3</a>
+            </li>
+        </ul>
+        <br>
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a href="#" class="nav-link">링크1</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">링크2</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">링크3</a>
+            </li>
+        </ul>
+        
+        <br><hr><br>
+        
+        <!-- 세로 형태의 네비게이션 메뉴 -->
+        <!-- ul의 class에 flex-column을 추가함 -->
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a href="#" class="nav-link">링크1</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">링크2</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">링크3</a>
+            </li>
+        </ul>
+        
+        <br><hr><br>
+        
+        <!-- tabs / pills 모양 네비게이션 메뉴 사용 -->
+        <!-- ul에 class에 nav-tabs, pills를 추가햐여 사용 -->
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a href="#" class="nav-link active">링크1</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link active">링크2</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">링크3</a>
+            </li>
+        </ul>
+        <br>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a href="#" class="nav-link active">링크1</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">링크2</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">링크3</a>
+            </li>
+        </ul>
+
+        <br><hr><br>
+        
+        <!-- 좌우 정렬(화면 전체 키우기)형태의 네비게이션 메뉴 -->
+        <!-- tabs / pills 사용 시 ul의 class에 nav-justified를 추가하여 출력 -->
+        <ul class="nav nav-tabs nav-justified">
+            <li class="nav-item">
+                <a href="#" class="nav-link active">링크1</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link active">링크2</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">링크3</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link disabled">비활성화</a>
+            </li>
+        </ul>
+        <br>
+        <ul class="nav nav-pills nav-justified">
+            <li class="nav-item">
+                <a href="#" class="nav-link active">링크1</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">링크2</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">링크3</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link disabled">비활성화</a>
+            </li>
+        </ul>
+
+        <br><hr><br>
+
+        <!-- tabs / pills 사용시 화면 전환 -->
+        <!-- 링크를 이동하여 화면을 전환하는 방식이 아니라 div를 통해서 화면이 전환된 것처럼 보이게 하는 기술 -->
+        <!-- li의 자식 태그인 a 태그에 속성 data-toggle="tab" 혹은 "pill"을 추가하여 사용 -->
+        <!-- a 링크 태그의 href 속성에 화면에 출력할 id명을 입력 -->
+        <!-- 아래에 실제 화면으로 출력될 부분을 div를 통해서 구현 -->
+        <!-- div의 class에 tab-pane container, active와 fade를 입력함 -->
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a href="#home" class="nav-link active" data-toggle="tab">home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#link1" class="nav-link" data-toggle="tab">링크1</a>
+            </li>
+            <li class="nav-item">
+                <a href="#link2" class="nav-link" data-toggle="tab">링크2</a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="home" class="tab-pane container active">
+                <h3>Home</h3>
+                <p>홈페이지 화면</p>
+            </div>
+            <div id="link1" class="tab-pane container fade">
+                <h3>Link1 화면</h3>
+                <p>Link1 화면</p>
+            </div>
+            <div id="link2" class="tab-pane container fade">
+                <h3>Link2 화면</h3>
+                <p>Link2 화면</p>
+            </div>
+        </div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>부트스트랩 버튼</title>
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/popper.js"></script>
+    <script src="./js/bootstrap.js"></script>
+</head>
+<body>
+    <!-- 부트스트랩 버튼 -->
+    <!-- 미리 디자인된 버튼을 사용할 수 있음 -->
+    <!-- 색상 테마도 사용할 수 있음 -->
+    <!-- 기본 8개 색상과 추가 색상 link 가 존재함 -->
+    <!-- a 태그에도 버튼의 클래스명을 사용할 수 있음 -->
+    <!-- 기본적으로 html5의 버튼 태그를 사용하나 버튼 태그는 input태그의 type="button" 과 동일한 태그이므로 input 태그에서도 사용이 가능함 -->
+    <!-- 클래스명 btn을 추가하고 옵션으로 btn-테마색상을 사용하여 출력함 -->
+    <div>
+        <button class="btn">기본형</button>
+        <button class="btn btn-primary">button primary</button>
+        <button class="btn btn-secondary">button secondary</button>
+        <button class="btn btn-success">button success</button>
+        <button class="btn btn-info">button info</button>
+        <button class="btn btn-warning">button warning</button>
+        <button class="btn btn-danger">button danger</button>
+        <button class="btn btn-light">button light</button>
+        <button class="btn btn-dark">button dark</button>
+        <button class="btn btn-link">button link</button>
+    </div>
+
+    <br><hr><br>
+    <div>
+        <input type="button" class="btn btn-primary" value="button primary">
+        <input type="button" class="btn btn-secondary" value="button secondary">
+        <input type="button" class="btn btn-success" value="button success">
+    </div>
+
+    <br><hr><br>
+    <div>
+        <a href="#" class="btn btn-primary">link primary</a>
+        <a href="#" class="btn btn-secondary">link secondary</a>
+        <a href="#" class="btn btn-success">link success</a>
+    </div>
+    <br><hr><br>
+    <!-- outline 형태의 버튼 -->
+    <!-- 클래스명에 btn-outline-테마색상으로 옵션을 추가하여 사용 -->
+    <div>
+        <button class="btn btn-outline-primary">outline primary
+        </button>
+        <button class="btn btn-outline-secondary">outline secondary
+        </button>
+        <button class="btn btn-outline-success">outline success
+        </button>
+        <button class="btn btn-outline-info">outline info
+        </button>
+        <button class="btn btn-outline-warning">outline warning
+        </button>
+        <button class="btn btn-outline-danger">outline danger
+        </button>
+        <button class="btn btn-outline-light btn-text">outline light
+        </button>
+        <button class="btn btn-outline-dark">outline dark
+        </button>
+    </div>
+    <br><hr><br>
+    <!-- 버튼 크기 설정 -->
+    <!-- 클래스 명에 btn-lg, sm의 옵션을 추가 -->
+
+    <div>
+        <button class="btn btn-primary btn-lg">button large</button>
+        <button class="btn btn-primary">button basic</button>
+        <button class="btn btn-primary btn-sm">button small</button>
+    </div>
+
+    <br><hr><br>
+
+    <!-- 블록 레벨 버튼 -->
+    <!-- 화면 영역 전체를 사용하는 버튼 -->
+    <!-- 클래스명에 btn-block를 추가하여 사용 -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 border border-primary">3칸</div>
+            <div class="col-md-6 border border-success">6칸</div>
+            <div class="col-md-3 border border-info">3칸</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <button class="btn btn-primary btn-block">블록타입 버튼 1</button>
+            </div>
+            <div class="col-md-6">
+                <button class="btn btn-outline-success btn-block">블록타입 버튼 2</button>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-info">기본타입 버튼</button>
+            </div>
+        </div>
+    </div>
+
+    <br><hr><br>
+
+    <!-- 활성 / 비활성 -->
+    <!-- 클래스명에 active / disable를 추가하여 버튼을 활성 상태와 비활성 상태로 변경할 수 있음-->
+    <!-- button 태그의 경우 active는 class에 입력하고, disable는 속성으로 따로 입력 -->
+    <!-- a 태그의 경우는 active와 disable를 모두 class에 입력 -->
+    <div>
+        <button class="btn btn-primary">기본상태</button>
+        <button class="btn btn-primary active">활성상태</button>
+        <button class="btn btn-primary" disabled>비활성상태</button>
+        <!-- 버튼에서 disabled 속성으로 따로 입력 -->
+
+        <br><br>
+        <a href="#" class="btn btn-info">기본상태</a>
+        <a href="#" class="btn btn-info active">활성 상태</a>
+        <a href="#" class="btn btn-info disabled">비활성 상태</a>
+        <!-- disabled 클래스 안에 입력 -->
+    </div>
+    
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

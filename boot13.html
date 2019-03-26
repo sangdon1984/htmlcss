@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>부트13 화면UI grid시스템</title>
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/popper.js"></script>
+    <script src="./js/bootstrap.js"></script>
+
+    <style>
+        .fakeimg{
+            height: 200px;
+            background-color: gray;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- 부트스트랩에서 기본적으로 지정해 놓은 margin, padding 설정 방법 -->
+    <!-- m : margin -->
+    <!-- p : padding -->
+    <!-- l: left, r: right, t: top, b: bottom, x: left/right, y: top/bottom, auto: auto -->
+    <!-- 0: 0px, 1: 4px, 2: 8px, 3: 16px, 4: 24px, 5: 48px -->
+    <!-- ml-4(margin-left: 24px;) -->
+    <!-- pr-3(padding-right: 16px;) -->
+    <!-- mx-2(margin-left: 8px; margin-right: 8px;) -->
+    <!-- m-5(margin: 48px; (4방향 전부다)) -->
+
+    <div class="jumbotron text-center mb-0">
+        <h1>부트스트랩을 사용한 화면 UI 구성하기</h1>
+        <p>부트스트랩4를 사용하여 Grid 시스템 구성</p>
+    </div>
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark mb-3">
+        <a href="#" class="navbar-brand">Home</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#menuColl">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menuColl">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">Link1</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Link2</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Link3</a>
+                </li>
+            </ul>
+
+            <form action="#" class="form-inline ml-auto">
+                <div class="input-group">
+                    <input type="text" class="form-control">
+                    <div class="input-group-append">
+                        <button class="btn btn-success">검색</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    <!-- grid 시스템으로 화면을 4 : 8 로 분할 -->
+    <div class="container">
+        <div class="row">
+            <!-- 사이드 메뉴 -->
+            <div class="col-md-4">
+                <h2>About Me</h2>
+                <h5>Photo of me:</h5>
+                <div class="fakeimg">더미사진</div>
+                <p>자기소개 글....</p>
+                <h3>Some links</h3>
+                <p>daum.net</p>
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">Link1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Link2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link disabled">Link3</a>
+                    </li>
+                </ul>
+                <hr class="d-md-none">
+            </div>
+            <!-- 메인 컨텐츠 -->
+            <div class="col-md-8">
+                <h2>메인 컨텐츠 제목</h2>
+                <h5>Posting : 2019-03-22</h5>
+                <div class="fakeimg"></div>
+                <p>아무글 입력...</p>
+                <p>하나에 청춘이 노루, 이국 위에도 어머님, 나는 그리고 까닭입니다. 풀이 어머니, 보고, 별 하늘에는 거외다. 한 이름과, 계집애들의 않은 듯합니다. 다 부끄러운 이름과, 까닭입니다.</p>
+                <p>청춘의 자신과 피는 싶이 놀이 것이다. 눈이 피어나기 구할 가슴이 이것이다. 천지는 예수는 가진 창공에 동산에는 있으며, 그러므로 뜨거운지라, 것이다. 꽃이 피어나기 속에 시들어 거선의 것이다.</p>
+                <br><br>
+                <h2>메인 컨텐츠 제목</h2>
+                <h5>Posting : 2019-03-22</h5>
+                <div class="fakeimg"></div>
+                <p>아무글 입력...</p>
+                <p>추억과 내 멀리 무덤 그리고 봅니다. 시와 벌써 한 가득 계십니다. 너무나 까닭이요, 어머님, 시와 당신은 보고, 가난한 애기 오면 까닭입니다. 아무 이름과, 별들을 버리었습니다.</p>
+            </div>
+        </div>
+        <div class="row">
+            <!-- footer -->
+            <div class="col-md-12 text-center">
+                <p>Footer</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

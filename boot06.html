@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>부트스트랩 사용하기 06 (점보트론)</title>
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/popper.js"></script>
+    <script src="./js/bootstrap.js"></script>
+
+    <style>
+        .jumbotron {
+        background-color: #226ab3;
+        }
+    </style>
+</head>
+<body>
+    <!-- 점보트론 -->
+    <!-- 웹 페이지의 내용에 대한 제목입력 부분-->
+    <!-- 점보트론은 div 태그에 클래스명으로 입력하여 사용함 -->
+    <!-- 2가지 형태의 점보트론이 존재 -->
+    <!-- jumbotron :  일반적인 점보트론으로 container의 자식 태그로 사용하는 점보트론-->
+    <!-- jumbotron-fluid :  화면 전체를 사용하는 형태의 점보트론, container 밖에 사용함-->
+    
+    <!-- 기본형 -->
+    <div class="container">
+        <div class="jumbotron">
+            <h1>점보트론 사용하기</h1>
+            <p>해당 웹페이지의 내용에 대한 요약 글 입력</p>
+        </div>
+    </div>
+
+    <br><hr><br>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1>전체화면 점보트론 사용하기</h1>
+            <p>해당 웹페이지의 내용에 대한 요약 글 입력</p>
+        </div>
+    </div>
+
+    <br><hr><br>
+
+    <div class="container-fluid">
+        <div class="jumbotron jumbotron-fluid">
+            <h1>전체화면 점보트론 사용하기</h1>
+            <p>해당 웹페이지의 내용에 대한 요약 글 입력</p>
+        </div>
+    </div>
+</body>
+</html>

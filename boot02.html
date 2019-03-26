@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bootstrap 사용하기</title>
+    <!--부트스트랩4는 총 4개의 파일로 이루어져 있음-->
+    <!-- bootstrap.css, jquery.js, popper.js, bootstrap.js-->
+    <!--bootstrap.css : 미리 디자인된 css파일-->
+    <!--jquery.js : javascript를 쉽게 사용하기 위한 jquery 파일-->
+    <!--popper.js : 특수 기능 구현-->
+    <!--bootstrap.js : 부트스트렙의 각종 기능 구현-->
+    <!--부트스트랩 파일 로드 순서-->
+    <!--bootstrap.css > jquery.js > popper.js > bootstrap.js-->
+    
+    <!--부트스트랩을 사용하는 2가지 방법-->
+    <!--외부 서버 파일 로드 -->
+    <!--간단한 사용방법, 최신버전 사용, 웹서버에 부하가 걸리지 않음-->
+    <!--외부서버에 네트워크 문제 발생시 로드 불가-->
+    <!--로드 속도가 느림-->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+    
+    <!-- 부트스트랩 파일을 다운로드 받아 사용하기-->
+    <!---->
+    <!--로드 속도가 빠름-->
+    <!--원하는 대로 수정이 가능함-->
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/popper.js"></script>
+    <script src="./js/bootstrap.js"></script>
+
+    <style>
+        .row > div {
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 부트스트랩이란? -->
+    <!-- 빠르고 쉬운 웹 개발을 위한 무료 ui 프레임워크 -->
+    <!-- 반응성 웹을 지원함 -->
+    <!-- HTML5 지원 -->
+    <!-- 모바일 웹 지원 -->
+    <!-- meta 태그를 추가해야함 -->
+    <!-- <meta name="viewport" content="width=device-width,initial-scale=1"> -->
+
+    <!-- 부트스트랩 기본 사용 방법 -->
+    <!-- 미리 디자인된 CSS를 class명을 활용하여 사용하는 방식 -->
+    <!-- 지정된 class명을 사용하면 미리 디자인된 CSS를 사용할 수 있음 -->
+    <!-- 사용자가 원하는 형태로 수정하고 싶을 경우 부트스트랩의 Class명을 사용하여 내용을 수정할 수 있다. -->
+
+    <button class="btn btn-primary">부트스트랩 버튼</button><br>
+    <button class="btn btn-outline-primary">부트스트랩 버튼2</button><br>
+
+    <!-- 부트스트랩의 기본요소 2가지 -->
+
+    <!-- 2가지 모양의 패널 -->
+    <!-- 2가지의 패널을 부트스트랩을 사용하는데 가장 기본이 되는 패널임 -->
+    <!-- 모든 부트스트랩 요소는 2가지의 패널의 자식 태그로 사용되어야 함 -->
+    <!-- 주로 div의 class명으로 사용함 -->
+    <!-- 2개 이상의 패널을 사용해도 무방함 -->
+
+    <!-- container : 고정폭 컨테이너, 화면 좌우측에 공백을 가지고 있는 형태의 패널 -->
+    <!-- container-fluid : 전체화면을 사용하는 패널, 화면 좌우측에 공백영역이 없음 -->
+
+    <div class="container bg-primary" style="height: 200px;"></div>
+    <br>
+    <div class="container-fluid bg-danger" style="height: 200px;"></div>
+    <br>
+
+    <!-- grid 시스템 -->
+    <!-- 화면을 구성하는 방식을 한 라인에 12개의 칸으로 구분하여 layout을 구성하는 시스템 -->
+    <!-- 한 라인에 최대 크기가 12 이상을 넘을 수 없음 -->
+    <!-- 화면의 칸 크기를 12로  맞춰야 함-->
+    <!-- 클래스명 row를 사용하여 하나의 라인을 선언 -->
+    <!-- 클래스명 col-xx을 사용하여 하나의 라인 안에 여러 개의 칸을 생성함 -->
+    <!-- tr, td의 관계와 비슷함 최대 크기가 12임-->
+
+    <!-- 칸을 구분하는 클래스명 col의 종류 -->
+    <!-- 총 5가지의 화면 구분 크기가 존재함 -->
+    <!-- 해당크기 미만이 되면 디자인한 화면이 아니라 세로로 정렬된 형태의 화면으로 변경됨 -->
+    <!-- 사용법 : col-화면크기기호-숫자 -->
+    <!-- col-xx(숫자) : 화면 너비가 576px 미만 -->
+    <!-- col-sm-xx : 화면 너비가 576px 이상 (두번째로 많이 씀)-->
+    <!-- col-md-xx : 화면 너비가 768px 이상 (주로 많이 씀)-->
+    <!-- col-lg-xx : 화면 너비가 992px 이상 -->
+    <!-- col-xl-xx : 화면 너비가 1200px 이상 -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1 border bg-primary">1칸</div>
+            <div class="col-md-1 border bg-primary">1칸</div>
+            <div class="col-md-1 border bg-primary">1칸</div>
+            <div class="col-md-1 border bg-primary">1칸</div>
+            <div class="col-md-1 border bg-primary">1칸</div>
+            <div class="col-md-1 border bg-primary">1칸</div>
+            <div class="col-md-1 border bg-primary">1칸</div>
+            <div class="col-md-1 border bg-primary">1칸</div>
+            <div class="col-md-1 border bg-primary">1칸</div>
+            <div class="col-md-1 border bg-primary">1칸</div>
+            <div class="col-md-1 border bg-primary">1칸</div>
+            <div class="col-md-1 border bg-primary">1칸</div>
+        </div>
+        <div class = "row">
+            <div class="col-md-2 border bg-secondary">2칸</div>
+            <div class="col-md-2 border bg-secondary">
+                <button class="btn btn-primary">버튼</button>
+            </div>
+            <div class="col-md-2 border bg-secondary">2칸</div>
+            <div class="col-md-2 border bg-secondary">2칸</div>
+            <div class="col-md-2 border bg-secondary">2칸</div>
+            <div class="col-md-2 border bg-secondary">2칸</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 border bg-info">3칸</div>
+            <div class="col-md-3 border bg-info">3칸</div>
+            <div class="col-md-3 border bg-info">3칸</div>
+            <div class="col-md-3 border bg-info">3칸</div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 border bg-success">4칸</div>
+            <div class="col-md-4 border bg-success">
+                <p>
+                    이상을 만천하의 예수는 것이다. 품으며, 힘차게 이상의 두손을 있으며, 간에 이상의 청춘의 봄바람이다. 길을 충분히 않는 있는 관현악이며, 얼음과 미인을 커다란 사랑의 것이다. 것은 구하지 무한한 꽃이 얼마나 위하여서, 황금시대다. 투명하되 무엇을 행복스럽고 피가 있는 위하여 것이다. 피가 이상, 끓는 품으며, 뼈 것이다. 자신과 관현악이며, 찬미를 이상의 두손을 새가 사막이다. 보내는 보는 것이다.보라, 가슴에 것이다. 가장 피에 위하여 품고 그와 소금이라 꽃이 것이다. 반짝이는 안고, 넣는 보이는 있는 용감하고 하였으며, 있다. 가슴에 얼음에 크고 때까지 이상을 설레는 뿐이다.
+                </p>
+            </div>
+            <div class="col-md-4 border bg-success">4칸</div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 border bg-warning">6칸</div>
+            <div class="col-md-6 border bg-warning">
+                <img src="./1234.jpg" alt="" style="width: 200px;">    
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 border bg-danger">12칸</div>
+        </div>
+        <br><br><br><br><br><br><br><br><br><br>
+
+        <!-- 문제 1) 일반 블로그 화면을 부트스트랩의 그리드 시스템을 이용하여 레이아웃을 설정하세요= -->
+        <!-- ps. 사이드바(3), 메인 컨텐츠(9)만 사용한 화면을 구성 -->
+        <!-- ps. 배경 색상은 원하는 색으로 사용 -->
+    <h1>블로그</h1>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 border bg-primary">사이드바</div>
+            <div class="col-md-9 border bg-danger">메인 컨텐츠</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+    

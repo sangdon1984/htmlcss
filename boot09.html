@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>부트09 프로그래스바</title>
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/popper.js"></script>
+    <script src="./js/bootstrap.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            var count = 0;
+            var timer;
+
+            $("#btn-start").on("click", function(){
+                timer = setInterval(function() {
+                    if (count < 100){
+                        count += 10;
+                        $("#pbar1").css("width", count + "%");
+                        $("#pbar1").text(count + "%");
+                    }
+                    else if (count == 100) {
+                        $("#pbar1").text("완료");
+                    }
+                    else{
+                        clearInterval(timer);
+                    }
+                }, 500);
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- 프로그래스바 -->
+    <!-- 진행 정도를 화면에 표시하기 위한 태그 -->
+    <!-- 부트스트랩에서는 div를 사용하여 프로그래스바를 출력함 -->
+    <!-- div의 클래스에 progress를 사용하고 자식 태그로 class에 progress-bar를 사용한 div를 선언해서 프로그레스바를 출력함 -->
+    <!-- 진행률은 style 속성의 width를 이용하여 화면에 출력함 -->
+    <br>
+    <div class="container">
+        <div class="progress">
+            <div class="progress-bar" style="width:50%"></div>
+            <!-- 비율을 얼마 차지 하는가를 스타일의 위드 이용 -->
+        </div>
+
+        <progress value="50" max="100" style="width:100%"></progress>
+        <!-- 비율을 밸류를 이용 -->
+    </div>
+
+    <br><hr><br>
+    <!-- 프로그래스바 굵기 설정 -->
+    <!-- div(밖의 div)의 style속성 중 height의 값을 사용하여 굵기를 조절 -->
+    <!-- 밖의 div와 안의 div의 height값을 동일하게 해야함(px값으로 조절) -->
+
+    <div class="progress" style="height: 32px;">
+        <div class="progress-bar" style="width: 70%; height: 32px;"></div>
+    </div>
+
+    <br><hr><br>
+
+    <!-- 프로그래스바에 진행을 표시 -->
+    <!-- 안쪽 프로그래스바 text 부분에 진행율을 문자로 입력 -->
+    <div class="progress" style="height: 32px;">
+        <div id="pbar1" class="progress-bar" style="width: 0%; height: 32px;">0%</div>
+    </div>
+    <button id="btn-start" class="btn btn-primary">시작</button>
+
+    <br><hr><br>
+
+    <!-- 프로그래스바 테마 색상 사용하기 -->
+    <!-- 기본 8개 테마 색상을 사용가능함 -->
+    <!-- 안쪽 div의 class에 bg-테마색상명을 사용하여 색상을 변경함 -->
+    <div class="progress">
+        <div class="progress-bar bg-success" style="width: 40%"></div>
+    </div>
+    <br>
+    <div class="progress">
+        <div class="progress-bar bg-info" style="width: 80%"></div>
+    </div>
+
+    <br><hr><br>
+
+    <!-- 사선 무늬의 프로그래스바 / 애니메이션 사용하기-->
+    <!-- 안쪽 div의 class에 progress-bar-striped를 추가하면 사선 무늬의 프로그래스바를 사용할수 있음 -->
+    <!-- 사선 무늬 프로그래스바를 사용할 경우 class에 progress-bar-animated를 추가하면 애니메이션 프로그래스바를 사용 가능함 -->
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped" style="width: 60%"></div>
+    </div>
+    <br>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 60%"></div>
+    </div>
+    
+    <br><hr><br>
+    
+    <!-- 한 라인에 다중 프로그래스바 사용하기 -->
+    <!-- 밖의 div는 하나를 선언하고 안의 div는 여러개 선언하는 방식 -->
+    <!-- 안의 div의 width는 총합이 100% 이하가 되도록 맞춰줌 -->
+    <div class="progress">
+        <div class="progress-bar" style="width: 30%">앱 30%</div>
+        <div class="progress-bar bg-success" style="width: 20%">사진 20%</div>
+        <div class="progress-bar bg-info" style="width: 10%">음악 10%</div>
+    </div>
+    
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
