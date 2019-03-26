@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js03</title>
+
+    <script>
+        // reverse() : 배열의 순서를 반대로 변경해서 출력함
+        var theFood=["짜장면", "냉면", "갈비탕","돈까스","삼겹살"];
+        theFood.reverse();
+        console.log(theFood);
+
+        // sort() : 배열 데이터 오름차순 정렬
+        var theSubway= ["2호선","9호선","7호선","4호선","3호선"];
+        theSubway.sort();
+        console.log(theSubway);
+
+        // concat() : 배열된 데이터를 결합
+        var Mountain1=["남산","도봉산","관악산","청계산","북한산"];
+        var Mountain2=["설악산","지리산","한라산","속리산"];
+        var joinResult = Mountain1.concat(Mountain2);
+        console.log(joinResult);
+
+        // slice(시작인덱스, 마지막인덱스) : 원하는 데이터만 선택
+        var theName = ["최준호","이성은","기오정","김민경","정예선"];
+        var result = theName.slice(2, 4);
+        console.log(result);
+
+        // join("구분자") : 구분자 기준으로 데이터를 합칩니다.
+        var theProduct = ["냉장고","컴퓨터","선풍기","밥솥","핸드폰"];
+        var joinResult=theProduct.join("-");
+        console.log(joinResult);
+
+        // split() : 하나의 문자열을 지정한 문자를 기준으로 하여 잘라내고 그 값을 배열로 만듬.
+        var splitArray = joinResult.split("-");
+        console.log(splitArray);
+        
+        console.log("-----------------------------");
+
+        var theSubway = ["2호선","9호선","7호선","4호선","3호선"];
+        var newLine1 = "1호선";
+        var newLine2 = "분당선";
+
+        theSubway.shift();              // 맨 앞의 데이터 삭제
+        console.log(theSubway)
+        theSubway.unshift(newLine1);    // 맨 앞의 데이터 추가(변경)
+        console.log(theSubway)
+
+        theSubway.pop();                // 마지막의 데이터 삭제
+        console.log(theSubway)
+        theSubway.push(newLine2);       // 마지막의 데이터 추가(변경)
+        console.log(theSubway)
+
+        console.log("-------------------------------");
+
+        // 함수
+        function greet(){
+            alert("안녕히 가세요")
+        }
+    </script>
+</head>
+<body>
+    <button onclick="greet();">버튼</button>
+</body>
+</html>
