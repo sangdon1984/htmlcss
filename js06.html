@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js06</title>
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/popper.js"></script>
+    <script src="./js/bootstrap.js"></script>
+
+    <script>
+        // js 이벤트
+        // 웹 브라우저의 각 요소들은 상, 하위 구조나 병렬구조등으로 체계화되는데 이렇게 정리된 체계를 DOM(Document Object Model, 문서객체구조)이라 한다.
+        // DOM구조와의 상호작용에서 가장 빈번하게 사용되는 방법이 '이벤트'
+        // 웹 브라우저에서 일어나는 모든 행동 : 이벤트
+        // 특정 이벤트가 발생하는 시점에서 함수를 호출하거나 스크립트를 실행하게 하는 요소 : 이벤트 핸들러
+        // 이벤트 리스너를 통한 자바스크립트 이벤트 사용하기
+        // 웹 표준 방식 이벤트 리스너 사용
+        // 이벤트대상.addEventListener("이벤트명", 함수명, false);
+
+        // function theFnc(){
+        //     alert("javascript");
+        // }
+        // function clickBtn1(){
+        //     var myBtn1 = document.getElementById("btn1");
+        //     myBtn1.onclick=theFnc;
+        // }
+        // function clickBtn2(){
+        //     var myBtn2 = document.getElementById("btn2");
+        //     myBtn2.onclick=theFnc;
+        // }
+        // // 표준 방식
+        // if(window.addEventListener){
+        //     window.addEventListener("load", clickBtn1,false);
+        //     window.addEventListener("load", clickBtn2,false);
+        // }
+        // // 비표준 방식
+        // else if(window.attachEvent){
+        //     window.attachEvent("onload", clickBtn1,false);
+        //     window.attachEvent("onload", clickBtn2,false);
+        // }
+
+        // js만 사용시 이벤트 등록
+        // window.onload = function(){
+        //     var btn1 = document.getElementById("btn1");
+        //     btn1.onclick = function(){
+        //         alert("1번째 자바스크립트 이벤트");
+        //     };
+        //     var btn2 = document.getElementById("btn2");
+        //     btn2.onclick = function(){
+        //         alert("2번째 자바스크립트 이벤트");
+        //     };
+        // };
+
+        // jquery를 사용한 이벤트 등록
+        // 
+        // $("선택자").명령(실행함수(){
+        // });
+        // 
+        // $(document).ready(function(){
+        //     실행코드
+        // });
+
+        // 이벤트 종류는 jquery 사이트의 API 문서를 확인하여 사용
+        // https://api.jquery.com/
+        // jq를 사용시 장점은 웹브라우저 호환성을 신경쓰지 않아도 됨
+        // jq가 내부에서 표준 방식과, 비표준 방식을 모두 동작하도록 구현해 놓음
+        $(document).ready(function(){
+            // jquery의 예전 이벤트 등록 방식
+            $("#btn1").click(function(){
+                alert("jquery를 이용한 이벤트 등록 1번")
+            });
+
+            // jquery의 최신 이벤트 등록 방식
+            $("#btn2").on("click", function(){
+                alert("jquery를 이용한 이벤트 등록 2번")
+            });
+
+            $("#btn3").on("click", function(){
+                $("#btn2").off("click");
+            });
+        });
+    </script>
+    
+</head>
+<body>
+    <button id="btn1">버튼1</button>
+    <button id="btn2">버튼2</button>
+    <button id="btn3">버튼3</button>
+</body>
+</html>
