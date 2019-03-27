@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jq01 이벤트</title>
+
+    <!-- <link rel="stylesheet" href="./css/bootstrap.css"> -->
+
+    <!-- 외부 파일 로드 방식 -->
+    <!-- <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/popper.js"></script>
+    <script src="./js/bootstrap.js"></script> -->
+
+    <!-- 외부 서버에서 파일 로드 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+        // jq는 js를 쉽게 사용하기 위해서 만들어진 라이브러리
+        // jq는 기본js 문법을 그대로 사용함 (내부가 js로 만들어짐)
+        // jq는 하는 일이 html, css, 이벤트, 효과 및 애니메이션, ajax 조작을 위해서 사용함
+
+        // jq의 사용법
+        // $(선택자).기능()
+        // $() : jq를 실행 기호
+        // jQuery("") 와 $("")는 같음
+        // () : html 선택자
+        // 기능() : jq 실행 함수
+        
+        // jq 의 선택자
+        // 기본적으로 css 선택자를 이용하여 html태그를 선택함
+        // 태그 선택자, class 선택자, id 선택자, 후손 선택자, 자손 선택자, ...
+
+        // 현재 웹 페이지에서 모든 html 태그가 로드된 후 아래의 js를 실행
+        // 웹페이지 실행 시 기본으로 사용해야 하는 이벤트
+
+        // 밑의 두 가지는 같은 의미
+        // function start(){
+        //     alert("자바스크립트 시작")
+        // }
+        // $(document).ready(start);
+        
+        // $(document).ready(function(){
+        //     alert("자바스크립트 시작")
+        // });
+
+        // this는 자기 자신을 뜻함
+        $(document).ready(function(){
+            // 마우스 클릭
+            // $("p").click(function(){
+            //     $(this).hide();
+            // });
+            // $(this)는 이벤트가 발생한 자기 자신을 뜻함
+            // 여기서는 p태그 자기 자신을 뜻함
+            
+            // 마우스 더블 클릭
+            $("p").dblclick(function(){
+                $(this).hide();
+            });
+
+            // 마우스 오른쪽 클릭
+            $("p").contextmenu(function(){
+                alert("마우스 오른쪽 버튼 클릭");
+            });
+
+            // 마우스가 해당 태그의 영역에 들어갔을때 이벤트 발생
+            // $("#div01").mouseenter(function(){
+            //     alert("마우스가 div 영역에 들어왔습니다.");
+            // });
+            
+            // 마우스가 해당 태그의 영역에서 나갔을때 이벤트 발생
+            // $("#div01").mouseleave(function(){
+            //     alert("마우스가 div 영역에서 나갔습니다.");
+            // });
+
+
+            // jq의 이벤트 리스너를 사용하여 이벤트 사용하기 
+            // on/off
+            
+            // on() : jq를 이용하여 해당 태그의 이벤트를 DOM의 이벤트 리스너에 등록
+            // $(선택자).on(기능명, 함수명);
+            $("#btn02").on("click",function(){
+                $("#btn01").on("click",function(){
+                    alert("click");
+                });
+            });
+            // off() : jq를 이용하여 DOM에 등록된 해당 태그의 이벤트를 삭제함
+            // $(선택자).off(기능명);
+            $("#btn03").on("click",function(){
+                $("#btn01").off("click");
+            });
+
+            // 마우스 버튼을 누르는 순간에 동작
+            $("#tagp").on("mousedown",function(){
+                alert("p태그에서 마우스 다운 이벤트 발생");
+            });
+
+            // 마우스 버튼을 떼는 순간 동작
+            $("#tagp").on("mouseup",function(){
+                alert("p태그에서 마우스 업 이벤트 발생");
+            });
+            
+            // 마우스엔터와 마우스리브 이벤트가 통합된 형태
+            // on 명령이 안먹힘
+            $("#div01").hover(function(){
+                alert("hover in");
+            }, function(){
+                alert("hover out")
+            });
+
+            // focus : 해당하는 태그에 포커스(활성화)가 주어졌을때 발생하는 이벤트
+            $("#input01").on("focus",function(){
+                console.log("텍스트 박스에 포커스가 주어졌습니다.");
+            });
+
+            // blur : 해당하는 태그가 포커스를 잃었을 경우 이벤트가 발생합니다.
+            $("#input01").on("blur",function(){
+                console.log("텍스트 박스가 포커스를 잃었습니다.");
+            });
+        });
+    </script>
+
+<style>
+        p { font-size: 24px; }
+        #div01 {
+            width: 200px;
+            height: 200px;
+            background-color: cadetblue;
+        }
+    </style>
+
+</head>
+<body>
+    <p>클릭 이벤트 테스트</p>
+    <p id="tagp">클릭하세요</p>
+
+    <div id="div01"></div>
+
+    <div>
+        <button id="btn01">버튼</button>
+        <button id="btn02">이벤트 등록</button>
+        <button id="btn03">이벤트 삭제</button>
+    </div>
+
+    <div>
+        <input id="input01" type="text" placeholder="글자를 입력하세요">
+    </div>
+</body>
+</html>
