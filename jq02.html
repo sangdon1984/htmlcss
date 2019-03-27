@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jq02 fade, slide</title>
+
+    <script src="./js/jquery-3.3.1.js"></script>
+
+    <script>
+        // jq를 이용하여 태그를 숨기고 보이게 하기(hide/show)
+        // hide()에 매개변수로 시간을 입력하면 태그를 숨길때까지 실행시간이 있음
+        // 시간은 1/1000 초로 계산
+        $(document).ready(function(){
+            $("#btn01").on("click", function(){
+                // $("#p01").hide();
+                $("#p01").hide(5000);
+            });
+
+            $("#btn02").on("click", function(){
+                // $("#p01").show();
+                $("#p01").show(5000);
+            });
+            
+            // fade 기능 사용하기
+            // fadeIn(), fadeOut(), fadeToggle(), fadeTo()
+            // fadeIn() : jq를 사용하여 해당 태그를 fade 효과를 부여함
+            // fadeIn(속도(시간), 함수);
+            // 속도는 시간을 직접 입력
+            // fadeOut() : jq를 사용하여 해당 태그를 fade 효과를 부여함
+            // fadeOut(속도(시간), 함수);
+            // fadeToggle() : fadeIn과 fadeOut를 합쳐놓은 기능
+            // fadeTo() : 원하는 투명도로 설정하여 fade 효과를 부여함, 투명도는 0.0 ~1.0
+            // fadeTo(속도, 투명도, 함수);
+            $("#btn03").on("click", function(){
+                $("#div01").fadeIn();
+                $("#div02").fadeIn("slow");
+                $("#div03").fadeIn(3000);
+            });
+
+            $("#btn04").on("click", function(){
+                $("#div01").fadeOut();
+                $("#div02").fadeOut("slow");
+                $("#div03").fadeOut(3000);
+            });
+
+            $("#btn05").on("click", function(){
+                $("#div01").fadeToggle();
+                $("#div02").fadeToggle("slow");
+                $("#div03").fadeToggle(3000);
+            });
+
+            $("#btn06").on("click", function(){
+                $("#div01").fadeTo("slow", 0.3);
+                $("#div02").fadeTo("slow", 0.5);
+                $("#div03").fadeTo(3000, 0.8);
+            });
+            
+            // jq를 이용하여 슬라이드 기능 사용하기
+            // slideDown, slideUp, slideToggle
+            // slideDown() : 특정 영역을 슬라이드하여 영역을 숨겨진 영역을 표시하는 기능
+            // slideDown(속도(시간), 함수);
+            // slideUp() : 특정 영역을 슬라이드하여 해당 영역을 숨기는 기능
+            // slideUp(속도(시간), 함수);
+            // slideToggle() : slideDown과 slideUp의 기능을 합쳐놓은 기능
+            // slideToggle(속도(시간), 함수);
+            
+            $("#btn07").on("click", function(){
+                $("#div05").slideDown("slow");
+            });
+            $("#btn08").on("click", function(){
+                $("#div05").slideUp("slow");
+            });
+            
+            // 문제 1) slideToggle을 사용하여 div05 영역을 슬라이드 다운, 업을 하는 기능을 구현하세요
+            // ps. 버튼 id btn09에 이벤트 등록
+            $("#btn09").on("click", function(){
+                $("#div05").slideToggle("slow");
+            });
+            
+            // 문제 2) slideToggle의 기능을 버튼을 한개 더 추가하여 slideToggele을 사용하지 않고 구현하세요.
+            // ps. 버튼 id는 btn10
+            $("#btn10").on("mousedown", function(){
+                $("#div05").slideDown("slow");
+            });
+            $("#btn10").on("mouseup", function(){
+                $("#div05").slideUp("slow");
+            });
+
+            // var btnState = true;
+            // $("#btn11").on("click", function(){
+            //     if(btnState == true){
+            //         $("#div05").slideDown("slow");
+            //         btnState = false;
+            //     }
+            //     else {
+            //         $("#div05").slideUp("slow");
+            //         btnState = true;
+            //     }
+            // });
+
+            // jq를 이용하여 애니메이션 처리하기
+            // animate()
+            // $(선택자).animate({파라미터}, 속도(시간), 함수)
+            // {}는 오브젝트 자료형
+            // 기본적으로 html은 화면에 로딩이 되고 나면 위치가 고정되어 이동이 불가능함
+            // 위치를 조작하려면 CSS의 position속성이 relative, fixed, absolute 이어야함
+            // animate 함수를 이용하여 거의 모든 css 속성을 변경할 수 있음
+            // 파라미터부분이 오브젝트형으로 되어 있기 때문에 원하는 대로 속성을 추가하여 변경할 수 있음
+
+            // 동일한 태그에 animate()함수를 여러번 사용할 경우 애니메이션이 순차적으로 동작이 됨
+            $("#btn11").on("click", function(){
+                $("#div06").animate({left: "500px", 
+                    top: "200px", 
+                    width: "100px", 
+                    height: "100px"
+                }, 2000);
+            });
+
+            $("#btn12").on("click", function(){
+                $("#div07").animate({
+                    height: "400px",
+                    opacity: "0.4"
+                }, "slow");
+                $("#div07").animate({
+                    width: "400px",
+                    opacity: "0.8"
+                }, "slow");
+                $("#div07").animate({
+                    height: "200px",
+                    opacity: "0.4"
+                }, "slow");
+                $("#div07").animate({
+                    width: "200px",
+                    opacity: "0.8"
+                }, "slow");
+            });
+
+            // 애니메이션 중지
+            // stop() : 실행되고 있는 애니메이션을 즉시 중지함
+            // $(선택자).stop(옵션)
+            $("#btn13").on("click", function(){
+                $("#div08").slideDown(5000);
+            });
+            
+            $("#btn14").on("click", function(){
+                $("#div08").stop();
+            });
+
+        });
+    
+    </script>
+
+    <style>
+        #div01, #div02, #div03{
+            width: 200px;
+            height: 200px;
+            display: none;
+        }
+
+        #div01{background-color: red}
+        #div02{background-color: green}
+        #div03{background-color: blue}
+
+        #div04, #div05{
+            padding: 5px;
+            background-color: blueviolet;
+            border: 1px solid darkseagreen;
+        }
+
+        #div05{
+            padding: 50px;
+            display: none;
+        }
+
+        #div06, #div07{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            background-color: indianred
+        }
+
+        #div07{background-color: yellowgreen}
+
+        #div08{
+            padding: 50px;
+            background-color: #555;
+            border: 1px solid #666555;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p id="p01">버튼을 클릭하면 사라지는 p 태그</p>
+
+        <button id="btn01">Hide 버튼</button>
+        <button id="btn02">Show 버튼</button>
+    </div>
+
+    <div>
+        <p>버튼을 클릭하면 아래에 상자가 생김</p>
+        <button id="btn03">FadeIn 버튼</button>
+        <button id="btn04">FadeOut 버튼</button>
+        <button id="btn05">fadeToggle 버튼</button>
+        <button id="btn06">fadeTo 버튼</button>
+
+        <div id="div01" ></div>
+        <div id="div02" ></div>
+        <div id="div03" ></div>
+    </div>
+
+    <div>
+        <div id="div04">
+            <button id="btn07">slideDown</button>
+            <button id="btn08">slideUp</button>
+            <button id="btn09">slideToggle</button>
+            <button id="btn10">slideToggle2</button>
+            <!-- <button id="btn11">slideToggle3</button> -->
+        </div>
+        <div id="div05">
+            <p>슬라이드 기능으로 인하여 숨겨졌다가 보이는 부분</p>
+        </div>
+    </div>
+    <br>
+
+    <div style="position:relative; height: 250px;">
+        <button id="btn11">애니메이션 버튼</button>
+        <br><br>
+        <div id="div06">
+            <p>div06의 자식태그인 p 태그</p>
+        </div>
+    </div>
+
+    <div style="position:relative; height: 250px">
+        <button id="btn12">애니메이션 버튼</button>
+        <br><br>
+        <div id="div07">
+            <p>div06의 자식태그인 p 태그</p>
+        </div>>
+    </div>
+
+    <div style="position:relative; height: 250px">
+        <button id="btn13">애니메이션 시작</button>
+        <br><br>
+        <button id="btn14">애니메이션 중지</button>
+        <br><br>
+        <div id="div08"></div>>
+    </div>
+
+    <br><br><br><br><br><br><br><br>
+</body>
+</html>
