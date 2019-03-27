@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jq04 컨텐츠 가져오기/설정하기</title>
+
+    <script src="./js/jquery-3.3.1.js"></script>
+
+    <script>
+        // DOM 조작 (html 조작하기)
+        // 컨텐츠 가져오기
+        // text(), html(), val()
+        // text() : 선택한 태그의 텍스트 내용을 설정하거나 가져옴
+        // html() : 선택한 태그의 내용을 설정하거나 가져옴(html 태그도 포함)
+        // val() : input의 value속성의 값을 설정하거나 가져옴
+        // attr() : 선택한 태그의 지정한 속성의 값을 설정하거나 가져옴
+        $(document).ready(function(){
+
+            $("#btn01").on("click", function(){
+                var value = $("#p01").text();
+                alert(value);
+            });
+            
+            $("#btn02").on("click", function(){
+                var value = $("#p01").html();
+                alert(value);
+            });
+
+            $("#btn03").on("click", function(){
+                var value = $("#tBox01").val();
+                alert(value);
+            });
+
+            $("#btn04").on("click", function(){
+                var value = $("#link01").attr("href");
+                alert(value);
+            });
+
+            // 컨텐츠 설정하기
+            // text(), html(), val(), attr()
+            // text(설정할 내용입력)
+            // html(설정할 내용입력(html 코드까지 입력))
+            // val(설정할 내용입력)
+            // attr(설정할 속성명, 설정값)
+
+            $("#btn05").on("click", function(){
+                $("#p02").text("text() 함수를 이용하여 text를 변경함");
+            });
+            $("#btn06").on("click", function(){
+                $("#p03").html("html() 함수를 이용하여 <b>html</b> 코드를 변경함");
+            });
+            $("#btn07").on("click", function(){
+                $("#tBox02").val("val() 함수를 이용하여 text를 value 속성에 입력");
+            });
+            $("#btn08").on("click", function(){
+                $("#link02").attr("href", "http://www.daum.net");
+            });
+            
+            // 문제 1) 링크 태그를 이용하여 네이버홈페이지로 이동하는 링크를 생성하고 jq를 이용하여 버튼을 더블클릭하였을때 기존의 링크 주소를 다음 홈페이지로 변경하는 프로그램을 작성하세요.
+            // ps. 링크의 text 부분도 '다음 홈페이지'로 변경되어야 함
+            $("#btn09").on("dblclick", function(){
+                $("#link03").attr("href", "http://www.daum.net").text("다음 홈페이지");
+            });
+            
+
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <p id="p01">이제 이름과, 나의 어머니, <b>마디씩 까닭입니다.</b> 잠, 쉬이 피어나듯이 쓸쓸함과 거외다. 나는 다 별빛이 무덤 벌레는 어머님, 아름다운 없이 노루, 봅니다.</p>
+        <input id="tBox01" type="text" value="나는 다 별빛이 무덤"><br><br>
+        <a id="link01" href="http://www.youtube.com" target="_blank">유튜브</a><br><br>
+
+        <button id="btn01">show text</button>
+        <button id="btn02">show html</button>
+        <button id="btn03">show val</button>
+        <button id="btn04">show attr</button>
+    </div>
+    <br><hr><br>
+    <div>
+        <p id="p02">비둘기, 하늘에는 하나에 언덕 못 마리아 마디씩 이름자 나는 있습니다.</p>
+        <p id="p03">별 헤는 둘 속의 위에 봄이 봅니다.</p>
+        <input type="text" id="tBox02" value="입력하세요"><br><br>
+        <a id="link02" href="http://www.google.co.kr" target="_blank">구글 홈페이지</a><br><br>
+
+        <button id="btn05">Set Text</button>
+        <button id="btn06">Set Html</button>
+        <button id="btn07">Set Value</button>
+        <button id="btn08">Set Attribute</button>
+    </div>
+    <br><hr><br>
+    <div>
+        <a id="link03" href="http://www.naver.com" target="_blank">네이버 홈페이지</a><br><br>
+
+        <button id="btn09">다음으로 변경</button><br>
+    </div>
+
+</body>
+</html>
