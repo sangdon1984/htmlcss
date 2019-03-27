@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jq03 콜백함수, 메서드 체인</title>
+
+    <script src="./js/jquery-3.3.1.js"></script>
+
+    <script>
+        // 콜백 함수 : 나중에 호출되는 함수
+        // 익명함수 형태를 가지고 있으며, 특정 기능을 사용 시 매개변수로 사용되는 함수
+        // 특정 함수가 실행이 완료된 후 자동으로 호출되어 실행되는 함수
+
+        $(document).ready(function(){
+
+            $("#btn01").on("click", function(){
+                $("#div01").hide("slow", function(){
+                    alert("div를 hide 했습니다.");
+                });
+            });
+
+            $("#btn02").on("click", function(){
+                $("#div01").show("slow", function(){
+                    alert("div를 show 했습니다.");
+                });
+            });
+
+            // 메서드 체인
+            // jq를 사용하여 함수를 연속으로 이어서 실행하는 방식
+            // $(선택자).명령1().명령2().명령3();
+            $("#btn03").on("click", function(){
+                // $("#div02").slideDown("slow");
+                // $("#div02").slideUp("slow");
+                // $("#div02").fadeIn("slow");
+                // $("#div02").fadeOut("slow");
+                $("#div02").slideDown("slow").slideUp("slow").fadeIn("slow").fadeOut("slow");
+            });
+        });
+    </script>
+
+    <style>
+        #div01{
+            width: 150px;
+            height: 150px;
+            background-color: greenyellow;
+        }
+
+        #div02{
+            width:150px;
+            height: 150px;
+            background-color: deepskyblue;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button id="btn01">버튼 1</button>
+        <button id="btn02">버튼 2</button><br><br>
+        <div id="div01"></div>
+    </div>
+
+    <div>
+        <button id="btn03">메서드 체인</button>
+        <div id="div02"></div>
+    </div>
+</body>
+</html>
